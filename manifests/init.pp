@@ -82,8 +82,8 @@ class ruby (
     portage::package { 'ruby':
       ensure   => $version,
       name     => $ruby_package,
-      keywords => $gentoo_keywords,
-      use      => $gentoo_use,
+      keywords => $ruby_gentoo_keywords,
+      use      => $ruby_gentoo_use,
     }
   } else {
     package { 'ruby':
