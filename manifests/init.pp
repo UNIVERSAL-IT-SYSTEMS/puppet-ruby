@@ -118,7 +118,7 @@ class ruby (
     }
   }
 
-  if $rubygems_update {
+  if $rubygems_update and $::operatingsystem != 'gentoo' {
     package { 'rubygems-update':
       ensure    => $gems_version,
       provider  => 'gem',
