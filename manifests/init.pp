@@ -106,7 +106,7 @@ class ruby (
     portage::package { 'rubygems':
       ensure   => $rubygems_ensure,
       name     => $rubygems_package,
-      require  => Package['ruby'],
+      require  => Portage::Package['ruby'],
       keywords => $gems_gentoo_keywords,
       use      => $gems_gentoo_use,
     }
