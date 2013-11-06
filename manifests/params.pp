@@ -28,7 +28,7 @@ class ruby::params {
     'gentoo': {
       $ruby_package     = 'dev-lang/ruby'
       $rubygems_package = 'dev-ruby/rubygems'
-      $ruby_dev         = '' # ??
+      $ruby_dev         = [ 'dev-ruby/rdoc', 'dev-ruby/rake' ]
       $rubygems_update  = false
     }
     default: {
