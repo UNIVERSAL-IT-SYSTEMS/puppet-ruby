@@ -45,8 +45,9 @@ describe 'ruby', :type => :class do
   end
 
   describe 'when called with no parameters on gentoo' do
-    let (:facts) { {  :osfamily => 'Gentoo',
-                      :path     => '/usr/local/bin:/usr/bin:/bin' } }
+    let (:facts) { { :osfamily => 'Gentoo',
+                     :operatingsystem => 'gentoo',
+                     :path     => '/usr/local/bin:/usr/bin:/bin' } }
     it {
       should contain_portage__package('ruby').with({
         'ensure'  => 'installed',
@@ -127,6 +128,7 @@ describe 'ruby', :type => :class do
 
   describe 'when called with custom ruby package name on gentoo' do
     let (:facts) { { :osfamily => 'Gentoo',
+                     :operatingsystem => 'gentoo',
                      :path     => '/usr/local/bin:/usr/bin:/bin' } }
     let (:params) { {  :ruby_package  => 'dev-lang/ruby-custom' } }
     it {
@@ -145,6 +147,7 @@ describe 'ruby', :type => :class do
 
   describe 'when called with custom rubygems package name on gentoo' do
     let (:facts) { { :osfamily => 'Gentoo',
+                     :operatingsystem => 'gentoo',
                      :path     => '/usr/local/bin:/usr/bin:/bin' } }
     let (:params) { { :rubygems_package  => 'dev-ruby/rubygems-custom' } }
     it {
@@ -209,7 +212,8 @@ describe 'ruby', :type => :class do
   end
 
   describe 'when called with custom rubygems and ruby versions on gentoo' do
-    let (:facts) { {  :osfamily => 'Gentoo',
+    let (:facts) { { :osfamily => 'Gentoo',
+                     :operatingsystem => 'gentoo',
                       :path     => '/usr/local/bin:/usr/bin:/bin' } }
     let (:params) { {   :gems_version => '1.9.3_p448',
                         :version      => '2.0.3', } }
@@ -228,8 +232,9 @@ describe 'ruby', :type => :class do
   end
 
   describe 'when called with keywords and useflags on gentoo' do
-    let (:facts) { {  :osfamily => 'Gentoo',
-                      :path     => '/usr/local/bin:/usr/bin:/bin' } }
+    let (:facts) { { :osfamily => 'Gentoo',
+                     :operatingsystem => 'gentoo',
+                     :path     => '/usr/local/bin:/usr/bin:/bin' } }
     let (:params) { {   :ruby_gentoo_keywords => ['~amd64', '~x86'],
                         :ruby_gentoo_use      => ['rdoc', 'readline', 'ssl'],
                         :gems_gentoo_keywords => ['~amd64', '~x86'],
