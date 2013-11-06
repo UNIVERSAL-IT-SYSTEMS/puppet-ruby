@@ -136,7 +136,7 @@ describe 'ruby', :type => :class do
         'ensure'  => 'installed',
         'name'    => 'dev-lang/ruby-custom',
       })
-      should contain_package('rubygems').with({
+      should contain_portage__package('rubygems').with({
         'ensure'  => 'installed',
         'require' => 'Portage::Package[ruby]',
       })
@@ -219,10 +219,10 @@ describe 'ruby', :type => :class do
                         :version      => '2.0.3', } }
     it {
       should contain_portage__package('ruby').with({
-        'ensure'  => '1.9.3_p448',
+        'ensure'  => '2.0.3',
         'name'    => 'dev-lang/ruby',
       })
-      should contain_package('rubygems').with({
+      should contain_portage__package('rubygems').with({
         'ensure'  => '1.9.3_p448',
         'require' => 'Portage::Package[ruby]',
       })
@@ -246,7 +246,7 @@ describe 'ruby', :type => :class do
         'keywords' => ['~amd64', '~x86'],
         'use'      => ['rdoc', 'readline', 'ssl'],
       })
-      should contain_package('rubygems').with({
+      should contain_portage__package('rubygems').with({
         'ensure'   => 'installed',
         'name'     => 'dev-ruby/rubygems',
         'require'  => 'Portage::Package[ruby]',
